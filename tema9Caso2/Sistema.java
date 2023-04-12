@@ -6,6 +6,8 @@ public class Sistema {
 
 	public static void main(String[] args) throws ExcepcionDiaSup100, ExcepcionDiaInf20, ExcepcionGeneral {
 
+		try {
+		
 		final int tamaño = 10;
 
 		Mundo[] mun = new Mundo[tamaño];
@@ -17,12 +19,12 @@ public class Sistema {
 		boolean hab;
 
 		Mundo m = new Mundo();
-
-		for (int i = 0; i <= tamaño; i++) {
+		
+		for (int i = 0; i < tamaño; i++) {
 			mun[i] = m;
 		}
 
-		for (int i = 0; i <= tamaño; i++) {
+		for (int i = 0; i < tamaño; i++) {
 			System.out.print("Introduce el nombre: ");
 			nombre = sc.next();
 			System.out.print("Introduce el diametro en km: ");
@@ -35,7 +37,7 @@ public class Sistema {
 		}
 
 		int i = 0;
-		while (i <= tamaño) {
+		while (i < tamaño) {
 			if (mun[i].getDiametro() > 100) {
 				i = tamaño + 1;
 				throw new ExcepcionDiaSup100();
@@ -43,6 +45,9 @@ public class Sistema {
 				throw new ExcepcionDiaInf20();
 			}
 			sc.close();
+		}
+		} catch (ExcepcionGeneral e) {
+			System.out.println("HA OCURRIDO UNA EXCEPCION.");
 		}
 	}
 }
