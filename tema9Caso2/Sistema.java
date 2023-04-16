@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Sistema {
 
-	public static void main(String[] args) throws ExcepcionDiaSup100, ExcepcionDiaInf20, ExcepcionGeneral {
+	public static void main(String[] args) throws ExcepcionDiaSup100, ExcepcionDiaInf20 {
 
 		try {
 		
@@ -25,7 +25,7 @@ public class Sistema {
 		}
 
 		for (int i = 0; i < tamaño; i++) {
-			System.out.print("Introduce el nombre: ");
+			System.out.print("Introduce el nombre " + " del planera numero " + i + ":");
 			nombre = sc.next();
 			System.out.print("Introduce el diametro en km: ");
 			diam = sc.nextFloat();
@@ -36,6 +36,8 @@ public class Sistema {
 			mun[i].setHabitable(hab);
 		}
 
+		
+		
 		int i = 0;
 		while (i < tamaño) {
 			if (mun[i].getDiametro() > 100) {
@@ -46,7 +48,13 @@ public class Sistema {
 			}
 			sc.close();
 		}
-		} catch (ExcepcionGeneral e) {
+		}catch (ExcepcionDiaSup100 e) {
+			System.out.println("Diametro superior a 100km.");
+		}
+		catch (ExcepcionDiaInf20 e) {
+			System.out.println("Diametro inferior a 20km.");
+		}
+		catch (Exception e) {
 			System.out.println("HA OCURRIDO UNA EXCEPCION.");
 		}
 	}
