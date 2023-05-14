@@ -1,5 +1,6 @@
 package Tema11Caso1;
 
+import java.util.Objects;
 import java.util.Random;
 
 public class Partido {
@@ -86,6 +87,28 @@ public class Partido {
         	}
         }
 	}
+
+	
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(ganador, jugador1, jugador2, perdedor);
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Partido other = (Partido) obj;
+		return Objects.equals(ganador, other.ganador) && Objects.equals(jugador1, other.jugador1)
+				&& Objects.equals(jugador2, other.jugador2) && Objects.equals(perdedor, other.perdedor);
+	}
+
 
 	@Override
 	public String toString() {

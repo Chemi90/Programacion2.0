@@ -7,7 +7,7 @@ public class main {
 		DivisionPorCero div = new DivisionPorCero();
 
 		try {
-			div.division(10, 2);
+			div.division(10, 0);
 		} catch (ExcepcionDeDivisionPorCero e) {
 			System.out.println(e.getMessage());
 		}
