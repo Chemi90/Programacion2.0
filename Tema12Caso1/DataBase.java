@@ -10,7 +10,7 @@ import java.util.Scanner;
 
 public class DataBase {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/proyecto_ja";
+    private static final String URL = "jdbc:mysql://localhost:3306/proyecto_ja_inventario";
     private static final String USER = "root";
     private static final String PASSWORD = "posnose90";
 
