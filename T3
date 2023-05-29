@@ -1,0 +1,117 @@
+import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
+
+public class MyUnitTest {
+
+    @Test
+
+    public void testConcatenate() {
+
+        MyUnit myUnit = new MyUnit();
+
+        String result = myUnit.concatenate("Hello", "World");
+
+        assertEquals("HelloWorld", result);
+
+    }
+
+}
+
+
+
+public class ClaseComparar {
+    public int compara(int n1, int n2) {
+        if (n1 > n2)
+            return 1;
+        else if (n1 < n2)
+            return -1;
+        else
+            return 0;
+    }
+}
+
+
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
+public class ClaseCompararTest {
+
+    @Test
+    public void testcompara() {
+        ClaseComparar claseComparar = new ClaseComparar();
+
+        int result1 = claseComparar.compara(5, 2);
+        int result2 = claseComparar.compara(2, 5);
+        int result3 = claseComparar.compara(3, 3);
+
+        assertEquals(1, result1);
+        assertEquals(-1, result2);
+        assertEquals(0, result3);
+    }
+}
+
+
+
+package números;
+
+import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+
+public class NumeroTest {
+
+    @Test
+    public void testsumaNPrimeros() {
+        Numero numero = new Numero();
+
+        int result1 = numero.sumaNPrimeros(5);
+        int result2 = numero.sumaNPrimeros(10);
+
+        assertEquals(15, result1);
+        assertEquals(55, result2);
+    }
+}
+
+
+
+
+package números;
+
+public class Numero {
+
+    public int sumaNPrimeros(int n) {
+        if (n <= 0)
+            return 0;
+        else
+            return n + sumaNPrimeros(n - 1);
+    }
+}
+
+
+public class ClaseOrdenarArray {
+
+    public int[] ordenararray(int[] array) {
+        int n = array.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (array[j] > array[j + 1]) {
+                    // Intercambiar array[j] y array[j+1]
+                    int temp = array[j];
+                    array[j] = array[j + 1];
+                    array[j + 1] = temp;
+                }
+            }
+        }
+        return array;
+    }
+}
+
+
+import org.junit.Test;
+import static org.junit.Assert.assertArrayEquals;
+
+public class ClaseOrdenarArrayTest {
+
+    @Test
+    public void testordenararray() {
+        ClaseOrdenarArray claseOrdenar
